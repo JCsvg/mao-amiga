@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './screens/login_screen.dart';
+import 'screens/login_page.dart';
+import 'screens/ong/ong_vol_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(),
+      home: OngVolPage(),
     );
   }
 }
