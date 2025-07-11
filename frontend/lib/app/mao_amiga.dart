@@ -11,10 +11,10 @@ class MaoAmiga extends StatelessWidget {
     LoginPage(),
     Homepage(),
     SearchPage(),
-    NotificationsPage()
+    NotificationsPage(isONG: true,)
   ];
 
-  final int _atual = 1;
+  final int _atual = 3;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
