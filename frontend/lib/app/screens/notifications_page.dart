@@ -24,7 +24,7 @@ class NotificationsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notificações'),
+        title: const Text('Notificações', style: TextStyle(fontWeight: FontWeight.bold),),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
