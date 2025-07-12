@@ -110,6 +110,30 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "preact_signals",
+      "rootUri": "file:///home/yahiro/.pub-cache/hosted/pub.dev/preact_signals-1.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "signals",
+      "rootUri": "file:///home/yahiro/.pub-cache/hosted/pub.dev/signals-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "signals_core",
+      "rootUri": "file:///home/yahiro/.pub-cache/hosted/pub.dev/signals_core-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "signals_flutter",
+      "rootUri": "file:///home/yahiro/.pub-cache/hosted/pub.dev/signals_flutter-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///home/yahiro/snap/flutter/common/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
