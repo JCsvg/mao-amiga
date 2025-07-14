@@ -17,10 +17,10 @@ class _MaoAmigaAppState extends State<MaoAmigaApp> {
   final List<Widget> _screens = [
     HomePage(),
     SearchPage(),
+    NotificationsPage(),
     ProfilePage(),
     OngVolPage(),
     LoginPage(),
-    NotificationsPage(),
   ];
 
   int _controllerPage = 0;
@@ -47,20 +47,20 @@ class _MaoAmigaAppState extends State<MaoAmigaApp> {
               label: 'Inicio',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.explore_outlined),
               label: 'Pesquisa',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications_none),
+              label: 'Notificações',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Perfil',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.house),
-              label: 'ONG',
-            ),
           ],
           currentIndex: _controllerPage,
-          selectedItemColor: Colors.deepPurple[500],
+          selectedItemColor: Colors.black,
           onTap: _tracePage,
         ),
       ),

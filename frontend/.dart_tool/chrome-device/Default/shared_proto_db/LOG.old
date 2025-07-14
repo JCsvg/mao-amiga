@@ -1,3 +1,6 @@
-2025/07/11-16:52:53.804 463e Reusing MANIFEST /tmp/flutter_tools.XDCODB/flutter_tools_chrome_device.GKVOZG/Default/shared_proto_db/MANIFEST-000001
-2025/07/11-16:52:53.804 463e Recovering log #4
-2025/07/11-16:52:53.806 463e Reusing old log /tmp/flutter_tools.XDCODB/flutter_tools_chrome_device.GKVOZG/Default/shared_proto_db/000004.log 
+2025/07/14-09:23:54.322 1ded Reusing MANIFEST /tmp/flutter_tools.IVQEQW/flutter_tools_chrome_device.CMJNBL/Default/shared_proto_db/MANIFEST-000001
+2025/07/14-09:23:54.323 1ded Recovering log #7
+2025/07/14-09:23:54.326 1ded Reusing old log /tmp/flutter_tools.IVQEQW/flutter_tools_chrome_device.CMJNBL/Default/shared_proto_db/000007.log 
+2025/07/14-09:23:54.326 1ded Delete type=0 #5
+2025/07/14-09:23:54.326 1ded Delete type=0 #4
+2025/07/14-09:23:54.326 1ded Delete type=2 #6

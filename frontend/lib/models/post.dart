@@ -11,7 +11,8 @@ class Post extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 5.0, bottom: 15.0),
-      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey))),
+      decoration:
+          BoxDecoration(border: Border(bottom: BorderSide(color: Colors.grey))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,7 +48,7 @@ class Post extends StatelessWidget {
               ],
             ),
           ),
-            
+
           // imagem principal
           Padding(
             padding: const EdgeInsets.all(5.0),
@@ -61,22 +62,24 @@ class Post extends StatelessWidget {
                   loadingBuilder: (context, child, progress) {
                     if (progress == null) return child;
                     return Center(
-                      child: CircularProgressIndicator(value: progress.expectedTotalBytes != null
-                          ? progress.cumulativeBytesLoaded / (progress.expectedTotalBytes ?? 1)
-                          : null),
+                      child: CircularProgressIndicator(
+                          value: progress.expectedTotalBytes != null
+                              ? progress.cumulativeBytesLoaded /
+                                  (progress.expectedTotalBytes ?? 1)
+                              : null),
                     );
                   },
                 ),
               ),
             ),
           ),
-            
+
           // legenda
           Padding(
             padding: const EdgeInsets.all(12),
             child: Text(post.caption),
           ),
-            
+
           // ações (curtir/comentar)
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -92,7 +95,7 @@ class Post extends StatelessWidget {
               ],
             ),
           ),
-            
+
           const SizedBox(height: 8),
         ],
       ),
