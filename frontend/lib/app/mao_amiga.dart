@@ -25,7 +25,7 @@ class _MaoAmigaAppState extends State<MaoAmigaApp> {
     OngProfilePage(),
   ];
 
-  int _controllerPage = 6;
+  int _controllerPage = 1;
 
   void _tracePage(int index) {
     setState(() {
@@ -38,9 +38,6 @@ class _MaoAmigaAppState extends State<MaoAmigaApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Barra de navegação inferior'),
-        ),
         body: _screens[_controllerPage] 
         // _screens.elementAt(_controllerPage),
         // bottomNavigationBar: BottomNavigationBar(
