@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/models/event_description.dart';
 import 'package:frontend/app/screens/homepage.dart';
 import 'package:frontend/app/screens/login_page.dart';
 import 'package:frontend/app/screens/notifications_page.dart';
 import 'package:frontend/app/screens/ong/ong_profile_page.dart';
 import 'package:frontend/app/screens/ong/ong_vol_page.dart';
-import 'package:frontend/app/screens/profile_page.dart';
 import 'package:frontend/app/screens/search_page.dart';
 
 class MaoAmigaApp extends StatefulWidget {
@@ -19,13 +19,13 @@ class _MaoAmigaAppState extends State<MaoAmigaApp> {
     HomePage(),
     SearchPage(),
     NotificationsPage(isONG: false,),
-    ProfilePage(),
     OngVolPage(),
     LoginPage(),
     OngProfilePage(),
+    EventDescription(),
   ];
 
-  int _controllerPage = 1;
+  int _controllerPage = 5;
 
   void _tracePage(int index) {
     setState(() {

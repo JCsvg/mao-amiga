@@ -90,8 +90,6 @@ class _SearchPageState extends State<SearchPage> {
                         .toList(),
                   ),
                 ),
-
-              const SizedBox(height: 24),
               // Posts
               ListBody(
                 children: HomePage().posts.map((postData) => Post(post: postData)).toList(),

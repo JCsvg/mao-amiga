@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/models/event_description.dart';
 
 class EventCard extends StatelessWidget {
   final String date;
@@ -16,8 +17,10 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text('Clicou em "$title"')));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const EventDescription()),
+        );
       },
       child: Container(
         width: 160,
