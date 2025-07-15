@@ -1,68 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/models/event_description.dart';
-import 'package:frontend/app/screens/homepage.dart';
-import 'package:frontend/app/screens/login_page.dart';
-import 'package:frontend/app/screens/notifications_page.dart';
-import 'package:frontend/app/screens/ong/ong_profile_page.dart';
-import 'package:frontend/app/screens/ong/ong_vol_page.dart';
-import 'package:frontend/app/screens/search_page.dart';
+import 'screens/home/feed_screen.dart';
+import 'screens/home/notification_screen.dart';
+import 'screens/home/profile_screen.dart';
+import 'screens/home/search_screen.dart';
 
-class MaoAmigaApp extends StatefulWidget {
-  const MaoAmigaApp({super.key});
+class MaoAmiga extends StatefulWidget {
+  const MaoAmiga({super.key});
 
   @override
-  State<MaoAmigaApp> createState() => _MaoAmigaAppState();
+  State<MaoAmiga> createState() => _MaoAmigaState();
 }
 
-class _MaoAmigaAppState extends State<MaoAmigaApp> {
+class _MaoAmigaState extends State<MaoAmiga> {
+  // 1. Removido o 'final' para que a variável possa ser alterada.
+  int _currentPage = 0; // <<< MUDANÇA
+
+  // Lista de telas para navegação.
   final List<Widget> _screens = [
-    HomePage(),
-    SearchPage(),
-    NotificationsPage(isONG: false,),
-    OngVolPage(),
-    LoginPage(),
-    OngProfilePage(),
-    EventDescription(),
+    FeedScreen(),
+    SearchScreen(),
+    NotificationScreen(),
+    ProfileScreen(),
   ];
 
-  int _controllerPage = 5;
-
-  void _tracePage(int index) {
+  // 2. Função que será chamada pelo onTap para atualizar o estado.
+  void _onItemTapped(int index) {
+    // <<< MUDANÇA
     setState(() {
-      _controllerPage = index;
+      _currentPage = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: _screens[_controllerPage] 
-        // _screens.elementAt(_controllerPage),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: <BottomNavigationBarItem>[
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.home),
-        //       label: 'Inicio',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.explore_outlined),
-        //       label: 'Pesquisa',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.notifications_none),
-        //       label: 'Notificações',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.person),
-        //       label: 'Perfil',
-        //     ),
-        //   ],
-        //   currentIndex: _controllerPage,
-        //   selectedItemColor: Colors.black,
-        //   onTap: _tracePage,
-        // ),
+    return Scaffold(
+      body: _screens.elementAt(_currentPage),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Início', // <<< MUDANÇA (Adicionado label)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              (_currentPage == 1)
+                  ? Icons.explore_rounded
+                  : Icons.explore_outlined,
+            ),
+            label: 'Busca', // <<< MUDANÇA (Adicionado label)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              (_currentPage == 2)
+                  ? Icons.notifications_rounded
+                  : Icons.notifications_none_rounded,
+            ),
+            label: 'Notificações', // <<< MUDANÇA (Adicionado label)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Perfil', // <<< MUDANÇA (Adicionado label)
+          ),
+        ],
+        currentIndex: _currentPage,
+        // 3. Adicionada a propriedade onTap.
+        onTap: _onItemTapped, // <<< MUDANÇA
+        // Melhoria de estilo (opcional)
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey[800],
+        showSelectedLabels:
+            false, // Opcional: para esconder os labels se quiser
+        showUnselectedLabels:
+            false, // Opcional: para esconder os labels se quiser
       ),
     );
   }

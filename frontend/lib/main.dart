@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/app/mao_amiga.dart';
+import 'app/mao_amiga.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaoAmigaApp();
-  }
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MaoAmiga()));
 }
