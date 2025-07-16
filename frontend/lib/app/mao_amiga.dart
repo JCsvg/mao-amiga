@@ -1,68 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/models/event_description.dart';
-import 'package:frontend/app/screens/homepage.dart';
-import 'package:frontend/app/screens/login_page.dart';
-import 'package:frontend/app/screens/notifications_page.dart';
-import 'package:frontend/app/screens/ong/ong_profile_page.dart';
-import 'package:frontend/app/screens/ong/ong_vol_page.dart';
-import 'package:frontend/app/screens/search_page.dart';
+import '../app/screens/home/feed_screen.dart';
+import '../app/screens/home/notification_screen.dart';
+import '../app/screens/home/profile_screen.dart';
+import '../app/screens/home/search_screen.dart';
+import '../app/theme_mode_app.dart';
 
-class MaoAmigaApp extends StatefulWidget {
-  const MaoAmigaApp({super.key});
+// ignore: must_be_immutable
+class MaoAmiga extends StatefulWidget {
+  final ThemeModeApp themeControl;
+  final isOng;
+
+  const MaoAmiga({super.key, required this.themeControl, this.isOng});
 
   @override
-  State<MaoAmigaApp> createState() => _MaoAmigaAppState();
+  State<MaoAmiga> createState() => _MaoAmigaState();
 }
 
-class _MaoAmigaAppState extends State<MaoAmigaApp> {
-  final List<Widget> _screens = [
-    HomePage(),
-    SearchPage(),
-    NotificationsPage(isONG: false,),
-    OngVolPage(),
-    LoginPage(),
-    OngProfilePage(),
-    EventDescription(),
-  ];
+class _MaoAmigaState extends State<MaoAmiga> {
+  int _currentPage = 0;
 
-  int _controllerPage = 5;
-
-  void _tracePage(int index) {
+  void _onItemTapped(int index) {
     setState(() {
-      _controllerPage = index;
+      _currentPage = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: _screens[_controllerPage] 
-        // _screens.elementAt(_controllerPage),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: <BottomNavigationBarItem>[
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.home),
-        //       label: 'Inicio',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.explore_outlined),
-        //       label: 'Pesquisa',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.notifications_none),
-        //       label: 'Notificações',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.person),
-        //       label: 'Perfil',
-        //     ),
-        //   ],
-        //   currentIndex: _controllerPage,
-        //   selectedItemColor: Colors.black,
-        //   onTap: _tracePage,
-        // ),
+    final List<Widget> screens = [
+      FeedScreen(isOng: widget.isOng),
+      SearchScreen(),
+      NotificationScreen(isOng: widget.isOng),
+      ProfileScreen(isOng: widget.isOng, themeControl: widget.themeControl),
+    ];
+
+    return Scaffold(
+      body: screens.elementAt(_currentPage),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon((_currentPage == 0) ? Icons.home : Icons.home_outlined),
+            label: 'Início',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              (_currentPage == 1)
+                  ? Icons.explore_rounded
+                  : Icons.explore_outlined,
+            ),
+            label: 'Busca',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              (_currentPage == 2)
+                  ? Icons.notifications_rounded
+                  : Icons.notifications_none_rounded,
+            ),
+            label: 'Notificações',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              (_currentPage == 3) ? Icons.person : Icons.person_outlined,
+            ),
+            label: 'Perfil',
+          ),
+        ],
+        currentIndex: _currentPage,
+        onTap: _onItemTapped,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
       ),
     );
   }

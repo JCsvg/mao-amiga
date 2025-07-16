@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/app/mao_amiga.dart';
+import 'app/mao_amiga.dart';
+import 'app/theme_mode_app.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (context) => ThemeModeApp(), child: MyApp()),
+  );
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  bool isOng = true;
   @override
   Widget build(BuildContext context) {
-    return MaoAmigaApp();
+    final themeModeApp = context.watch<ThemeModeApp>();
+
+    return MaterialApp(
+      title: 'Mão Amiga',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: themeModeApp.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: MaoAmiga(isOng: isOng, themeControl: themeModeApp),
+    );
   }
 }
