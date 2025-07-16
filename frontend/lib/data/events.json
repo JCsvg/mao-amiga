@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Feira de Adoção de Filhotes",
+    "date": "20 de julho de 2025",
+    "time": "Das 10h às 16h",
+    "description": "Venha encontrar seu novo melhor amigo! Teremos dezenas de cães e gatos filhotes, todos vacinados e vermifugados, esperando por um lar cheio de amor. O processo de adoção é criterioso e visa o bem-estar dos animais.",
+    "organizer": "Patas Amigas ONG"
+  },
+  {
+    "title": "Bazar Beneficente Pet",
+    "date": "27 de julho de 2025",
+    "time": "Das 09h às 18h",
+    "description": "Ajude nossa causa! Estaremos vendendo roupas, acessórios, livros e itens para pets, com toda a renda revertida para a manutenção do nosso abrigo. Sua compra salva vidas!",
+    "organizer": "Patas Amigas ONG"
+  },
+  {
+    "title": "Palestra: Posse Responsável e Primeiros Socorros",
+    "date": "10 de agosto de 2025",
+    "time": "Às 19h30",
+    "description": "Aprenda com veterinários experientes sobre os deveres da posse responsável e como agir em situações de emergência com seu animal de estimação. Evento gratuito e online. Inscrições abertas!",
+    "organizer": "Patas Amigas ONG"
+  },
+  {
+    "title": "Cãominhada no Lago Igapó",
+    "date": "17 de agosto de 2025",
+    "time": "Às 09h",
+    "description": "Traga seu cão para uma manhã divertida de socialização e exercício ao redor do Lago Igapó! Um evento para toda a família, promovendo a saúde e o bem-estar dos nossos amigos de quatro patas.",
+    "organizer": "Comunidade Pet Londrina"
+  },
+  {
+    "title": "Campanha de Arrecadação de Inverno",
+    "date": "24 de agosto de 2025",
+    "time": "Das 10h às 20h",
+    "description": "O frio chegou e nossos animais precisam de ajuda! Estamos arrecadando cobertores, caminhas, jornais e ração para manter nossos resgatados aquecidos e alimentados durante o inverno. Pontos de coleta no Shopping Catuaí.",
+    "organizer": "Patas Amigas ONG"
+  },
+  {
+    "title": "Dia de Fotos Pet no Aterro",
+    "date": "31 de agosto de 2025",
+    "time": "Das 14h às 17h",
+    "description": "Fotógrafos voluntários estarão no Aterro do Lago para tirar fotos profissionais do seu pet! Uma lembrança linda por uma doação espontânea para ajudar os animais do nosso abrigo.",
+    "organizer": "Patas Amigas ONG"
+  },
+  {
+    "title": "Festa de Aniversário da ONG",
+    "date": "07 de setembro de 2025",
+    "time": "A partir das 15h",
+    "description": "Venha comemorar mais um ano de muito trabalho e muitas vidas salvas! Teremos bolo, brincadeiras para os pets, sorteio de brindes e a presença de alguns dos nossos animais para adoção. Sua presença é o nosso maior presente!",
+    "organizer": "Patas Amigas ONG"
+  }
+]
